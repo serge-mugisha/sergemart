@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SergeMart - Fashion Store</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/logo.png" class="img-fluid">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-bold" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-bold active" href="./search.html">Search</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link fw-bold" href="#">My Cart</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="btn btn-outline-primary" href="./login.html">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Search Section -->
+        <section class="parallax text-center">
+            <div class="container">
+                <div class="row py-3 mt-5 text-light">
+                    <div class="col-lg-8 col-md-8 mx-auto">
+                        <h3 class="fw-light mt-5 fw-bold">Search the Store</h3>
+                        <p class="lead">Search and Discover thousands of new Fashion Designs and Look like the future in
+                            Public!</p>
+                        <form action="">
+                            <div class="row pt-4 justify-content-center">
+                                <div class="col-8">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control rounded-0" placeholder="eg. Shoes">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-primary py-2">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Search Results Section -->
+        <div class="container py-4">
+            <div class="shop-list pt-3">
+                <div class="row align-items-center">
+                    <div class="col-10">
+                        <h4>Search results for <b>'Shoes'</b></h4>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label text-muted m-0 p-0">Filter by:</label>
+                        <select class="form-select">
+                            <option selected value="Rating">Rating</option>
+                            <option value="low">Price: Low to High</option>
+                            <option value="high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/nike1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Nike Air</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">a white sneakers featuring lace up detail
+                                    and chunky sole.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 300</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/ray1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Ray-Ban Fletcher</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Ray-Ban Fletcher Black Matte Eclipse
+                                    perfect for modernists.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 135</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/sneaker1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Sneakers</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Great dark gray chunky sneakers with mesh
+                                    panel.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 350</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/suit1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Black Suit</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Essential Athletic Fit Blue Wool-Blend Suit
+                                    Blazer</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 699.99</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/nike1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Nike Air</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">a white sneakers featuring lace up detail
+                                    and chunky sole.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 300</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/ray1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Ray-Ban Fletcher</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Ray-Ban Fletcher Black Matte Eclipse
+                                    perfect for modernists.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 135</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/sneaker1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Sneakers</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Great dark gray chunky sneakers with mesh
+                                    panel.</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 350</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Product Card -->
+                    <div class="col-sm-3 py-4 prod-card">
+                        <div class="card shadow">
+                            <a class="link" href="./product.html">
+                                <img src="./images/suit1.png" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <a href="./product.html" class="h5 card-title link">Black Suit</a>
+                                <div class="">
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star text-primary"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <p class="card-text text-muted fs-6">Essential Athletic Fit Blue Wool-Blend Suit
+                                    Blazer</p>
+
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <span class="badge bg-secondary">$ 699.99</span>
+                                    </div>
+                                    <div class="col-7">
+                                         <button type="button" class="btn btn-sm btn-outline-primary"><span
+                                                class="fa fa-cart-plus"></span> add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <img src="./images/logo.png" class="img-fluid">
+                    <p class="text-muted">Copyright SergeMart 2021 All Rights Reserved.</p>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li class="py-1">Home</li>
+                                <li class="py-1">Search</li>
+                                <li class="py-1">Products</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li class="py-1">About</li>
+                                <li class="py-1">FAQ</li>
+                                <li class="py-1">Report a Bug</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-unstyled">
+                                <li class="py-1">Account</li>
+                                <li class="py-1">Settings</li>
+                                <li class="btn btn-sm btn-outline-primary">Log Out</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>

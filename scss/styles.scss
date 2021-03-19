@@ -1,1 +1,40 @@
-@import './bootstrap/bootstrap.scss';
+@import "./variables";
+html,
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.1em;
+}
+
+.parallax {
+  background-image: url("../images/hero.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.link {
+  text-decoration: none;
+  color: $dark;
+  &:hover {
+    color: $dark;
+  }
+}
+
+
+//Overrides
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+.btn {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link.active {
+  color: $primary !important;
+}
+
+.card {
+  width: 100%;
+}

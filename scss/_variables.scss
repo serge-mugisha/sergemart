@@ -1,0 +1,27 @@
+// $primary:       $blue !default;
+// $secondary:     $gray-600 !default;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $blue !default;
+// $danger:        $red !default;
+// $light:         $gray-100 !default;
+// $dark:          $gray-800 !default;
+
+$primary: #aa4791;
+$secondary: #0ca04a;
+$lightSecondary: #585858;
+$dark: #121212;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 90vw
+);
+
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+$btn-padding-y: 5px;
+$btn-padding-x: 20px;
+// $btn-font-family: 'Ubuntu', sans-serif;
