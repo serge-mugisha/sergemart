@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script defer src="./js/utils.js"></script>
+    <script defer src="./js/product.js"></script>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
             <div class="container">
                 <div class="row py-lg-5 mt-5 text-light">
                     <div class="col-lg-6 col-md-8 mx-auto">
-                        <h3 class="fw-bold mt-5">Nike Shoes - Store</h3>
+                        <h3 class="fw-bold mt-5">Shoes - Store</h3>
                     </div>
                 </div>
             </div>
@@ -58,8 +59,9 @@
 
         <!-- Product Section -->
         <div class="container">
-            <div class="row pt-5 align-items-center">
-                <div class="col-5">
+            <!-- align-items-center -->
+            <div class="row pt-5">
+                <div class="col-7">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -69,16 +71,8 @@
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
                         </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="./images/prodBig.png" class="d-block w-100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/prodBig2.png" class="d-block w-100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/prodBig3.png" class="d-block w-100">
-                            </div>
+                        <div id="productCarousel" class="carousel-inner">
+                            <!-- Images Here -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="prev">
@@ -93,173 +87,19 @@
                     </div>
                 </div>
                 <div class="col-5">
-                    <h3 class="fw-bold">Nike Air Force</h3>
-                    <div class="pb-4">
-                        <span class="fa fa-star fa-lg text-primary"></span>
-                        <span class="fa fa-star fa-lg text-primary"></span>
-                        <span class="fa fa-star fa-lg text-primary"></span>
-                        <span class="fa fa-star fa-lg"></span>
-                        <span class="fa fa-star fa-lg"></span>
+                    <div id="productDetails">
+                        <!-- Product Details -->
                     </div>
-
-                    <p>Get that special game day look. The unlocked PG 5 By You gives you the freedom to create left and
-                        right shoes independently for a totally custom pair.
-                    </p>
-                    <p>
-                        Classic varsity colours get an extra punch
-                        of personality with special hues and graphics that nod to PG's love of fishing and the outdoors.
-                    </p>
-                    <p>Colour Shown: Multi-Colour/Multi-Colour/Multi-Colour/Multi-Colour</p>
-
-                    <h5><span class="badge bg-secondary fw-bold px-3 py-2">$ 174</span></h5>
-                    <div class="py-3">
-                        <div class="row align-items-center">
-                            <div class="col-7">
-                                <form>
-                                    <div class="col-4">
-                                        <label for="size" class="text-muted fs-6">Items</label>
-                                        <input type="number" class="form-control" id="size" min="1" max="5"
-                                            placeholder="1">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-5 align-self-center pt-4">
-                                <div class="btn btn-outline-primary"><span class="fa fa-cart-plus"></span> Add to cart
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
 
-        <!-- Related Products Section -->
-        <div class="container pt-3">
-            <div class="row py-4">
+            <!-- Related Products Section -->
+            <div class="container pt-3 py-4">
                 <h4>Related Products</h4>
-                <!-- Single Product Card -->
-                <div class="col-sm-3 py-4 prod-card">
-                    <div class="card shadow">
-                        <a class="link" href="./product.html">
-                            <img src="./images/nike1.png" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <a href="./product.html" class="h5 card-title link">Nike Air</a>
-                            <div class="">
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <p class="card-text text-muted fs-6">a white sneakers featuring lace up detail
-                                and chunky sole.</p>
-
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <span class="badge bg-secondary">$ 300</span>
-                                </div>
-                                <div class="col-7">
-                                    <button type="button" class="btn btn-sm btn-outline-primary"><span
-                                                class="fa fa-cart-plus"></span> add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product Card -->
-                <div class="col-sm-3 py-4 prod-card">
-                    <div class="card shadow">
-                        <a class="link" href="./product.html">
-                            <img src="./images/ray1.png" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <a href="./product.html" class="h5 card-title link">Ray-Ban Fletcher</a>
-                            <div class="">
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <p class="card-text text-muted fs-6">Ray-Ban Fletcher Black Matte Eclipse
-                                perfect for modernists.</p>
-
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <span class="badge bg-secondary">$ 135</span>
-                                </div>
-                                <div class="col-7">
-                                    <button type="button" class="btn btn-sm btn-outline-primary"><span
-                                                class="fa fa-cart-plus"></span> add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product Card -->
-                <div class="col-sm-3 py-4 prod-card">
-                    <div class="card shadow">
-                        <a class="link" href="./product.html">
-                            <img src="./images/sneaker1.png" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <a href="./product.html" class="h5 card-title link">Sneakers</a>
-                            <div class="">
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <p class="card-text text-muted fs-6">Great dark gray chunky sneakers with mesh
-                                panel.</p>
-
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <span class="badge bg-secondary">$ 350</span>
-                                </div>
-                                <div class="col-7">
-                                    <button type="button" class="btn btn-sm btn-outline-primary"><span
-                                                class="fa fa-cart-plus"></span> add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Product Card -->
-                <div class="col-sm-3 py-4 prod-card">
-                    <div class="card shadow">
-                        <a class="link" href="./product.html">
-                            <img src="./images/suit1.png" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <a href="./product.html" class="h5 card-title link">Black Suit</a>
-                            <div class="">
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star text-primary"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <p class="card-text text-muted fs-6">Essential Athletic Fit Blue Wool-Blend Suit
-                                Blazer</p>
-
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <span class="badge bg-secondary">$ 699.99</span>
-                                </div>
-                                <div class="col-7">
-                                    <button type="button" class="btn btn-sm btn-outline-primary"><span
-                                                class="fa fa-cart-plus"></span> add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="relatedProducts" class="row">
+                    <!-- Single Product Card -->
                 </div>
             </div>
-        </div>
 
         </div>
 
@@ -303,8 +143,7 @@
         </div>
     </footer>
 
-
-    <script src="./js/bootstrap.min.js"></script>
+    <script defer src="./js/bootstrap.min.js"></script>
 </body>
 
 </html>
