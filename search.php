@@ -1,3 +1,5 @@
+
+<?php require_once('./dao/productDAO.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,24 +18,22 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="./index.php">
                 <img src="./images/logo.png" class="img-fluid">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold" href="./index.html">Home</a>
+                        <a class="nav-link fw-bold" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold active" href="./search.html">Search</a>
+                        <a class="nav-link fw-bold active" href="./search.php">Search</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold" href="#">My Cart</a>
+                    <a class="nav-link fw-bold" href="./addProduct.php">Add Product</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="btn btn-outline-primary" href="./login.html">Sign In</a>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-2">
                         <label class="form-label text-muted m-0 p-0">Sort by:</label>
-                        <select id="selectSort" class="form-select"  onchange="handleSort()">
+                        <select id="selectSort" class="form-select" onchange="handleSort()">
                             <option selected value="default"> - Sort by -</option>
                             <option value="rating">Rating</option>
                             <option value="low">Price: Low to High</option>
@@ -99,6 +99,65 @@
                 <div id="searchResults" class="row">
 
                     <!-- Single Product Card -->
+                    <?php
+                    $productDAO = new productDAO();
+                    $products = $productDAO->getProducts();
+                    if ($products) {
+
+                        foreach ($products as $product) {
+
+                            $id = $product->getId();
+                            $name = $product->getName();
+                            $price = $product->getPrice();
+                            $rating = $product->getRating();
+                            $description = $product->getDescription();
+                            $thumbnail = $product->getThumbnail();
+                            $pictures = $product->getPictures();
+                            $category = $product->getCategory();
+
+                            $description = substr($description, 0, 80) . '...';
+                            $rateStars = '';
+
+                            for ($i = 0; $i < $rating; $i++) {
+                                $rateStars = $rateStars . '<span class="fa fa-star text-primary"></span>';
+                            }
+                            for ($i = 0; $i < (5 - $rating); $i++) {
+                                $rateStars = $rateStars . '<span class="fa fa-star"></span>';
+                            }
+
+                            $prod = <<<EOF
+                                        <div class="col-sm-3 py-4 prod-card">
+                                            <div class="card shadow">
+                                                <a class="link" href="./product.php?id={$id}">
+                                                    <img src="./{$thumbnail}" class="card-img-top">
+                                                </a>
+                                                <div class="card-body">
+                                                    <a href="./product.php?id={$id}" class="h5 card-title link">{$name}</a>
+                                                    <div class="">
+                                                        {$rateStars}
+                                                    </div>
+                                                    <p class="card-text text-muted fs-6">{$description}</p>
+
+                                                    <div class="row align-items-center">
+                                                        <div class="col-5">
+                                                            <span class="badge bg-secondary">$ {$price}</span>
+                                                        </div>
+                                                        <div class="col-7">
+                                                            <a href="#" class="btn btn-sm btn-outline-primary"><span
+                                                                    class="fa fa-cart-plus"></span> add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    EOF;
+                            echo $prod;
+                        }
+                    } else {
+                        echo '<div class="alert alert-danger"><em>No Products found.</em></div>';
+                    }
+                    $productDAO->getMysqli()->close();
+                    ?>
 
                 </div>
             </div>

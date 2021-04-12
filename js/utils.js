@@ -113,14 +113,14 @@ function loadProducts(products, location) {
         let prodCard = `<div class="col-sm-3 py-4 prod-card">
         <div class="card shadow">
         <a class="link" href="./product.html">
-            <img src="./images/${product.thumbnail}" class="card-img-top">
+            <img src="./${product.thumbnail}" class="card-img-top">
         </a>
         <div class="card-body">
             <a href="./product.html?id=${product.id}" class="h5 card-title link">${product.name}</a>
             <div class="">
                 ${rating}
             </div>
-            <p class="card-text text-muted fs-6">${product.description.slice(0, 30)} ${product.category}... </p>
+            <p class="card-text text-muted fs-6">${product.description.slice(0, 80)}... </p>
             <div class="row align-items-center">
                 <div class="col-5">
                     <span class="badge bg-secondary">$ ${product.price}</span>

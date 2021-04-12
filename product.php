@@ -1,3 +1,5 @@
+<?php require_once('./dao/productDAO.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,24 +19,22 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="./index.php">
                 <img src="./images/logo.png" class="img-fluid">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold active" aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link fw-bold active" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold" href="./search.html">Search</a>
+                        <a class="nav-link fw-bold" href="./search.php">Search</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link fw-bold" href="#">My Cart</a>
+                    <a class="nav-link fw-bold" href="./addProduct.php">Add Product</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="btn btn-outline-primary" href="./login.html">Sign In</a>
@@ -57,6 +57,76 @@
             </div>
         </section>
 
+
+
+        <?php
+        $productDAO = new productDAO();
+
+        $prodID = $_GET['id'];
+
+        $product = $productDAO->getProduct($prodID);
+        if ($product) {
+
+            $id = $product->getId();
+            $name = $product->getName();
+            $price = $product->getPrice();
+            $rating = $product->getRating();
+            $description = $product->getDescription();
+            $thumbnail = $product->getThumbnail();
+            $pictures = $product->getPictures();
+            $category = $product->getCategory();
+
+            $rateStars = '';
+
+            for ($i = 0; $i < $rating; $i++) {
+                $rateStars = $rateStars . '<span class="fa fa-star fa-lg text-primary"></span>';
+            }
+            for ($i = 0; $i < (5 - $rating); $i++) {
+                $rateStars = $rateStars . '<span class="fa fa-star fa-lg"></span>';
+            }
+
+            $prod = <<<EOF
+            <h3 class="fw-bold">{$name}</h3>
+            <div class="pb-4">
+                {$rateStars}
+            </div>
+    
+            <p>{$description}</p>
+    
+            <h5><span id="productPrice" class="badge bg-secondary fw-bold px-3 py-2">$ {$price}</span></h5>
+    
+            <div class="pt-4">
+                    <div class="row align-items-center">
+                        <div class="col-7">
+                            <form>
+                                <div class="col-4">
+                                     <label for="size" class="text-muted fs-6">Items</label>
+                                     <input id="ProductQuantity" type="number" onchange="calculatePrice({$price})" class="form-control" id="size" min="1" max="5" placeholder="1">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-5 align-self-center pt-4">
+                              <div class="btn btn-outline-primary"><span class="fa fa-cart-plus"></span> Add to cart
+                             </div>
+                        </div>
+                    </div>
+            </div>
+    
+            </div>
+        EOF;
+
+        $images = <<<EOF
+            <div class="carousel-item active">
+                <img src="./{$pictures}" class="d-block w-100">
+            </div>
+        EOF;
+        } else {
+            echo '<div class="alert alert-danger"><em>No Products found.</em></div>';
+        }
+        $productDAO->getMysqli()->close();
+        ?>
+
+
         <!-- Product Section -->
         <div class="container">
             <!-- align-items-center -->
@@ -64,23 +134,21 @@
                 <div class="col-7">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div id="productCarousel" class="carousel-inner">
                             <!-- Images Here -->
+                            <?php
+                            echo $images;
+                            ?>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -89,6 +157,9 @@
                 <div class="col-5">
                     <div id="productDetails">
                         <!-- Product Details -->
+                        <?php
+                        echo $prod;
+                        ?>
                     </div>
                 </div>
             </div>

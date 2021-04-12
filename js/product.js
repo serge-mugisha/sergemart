@@ -1,9 +1,9 @@
-getProduct();
-loadProducts(products, 'relatedProducts');
+// getProduct();
+// loadProducts(products, 'relatedProducts');
 
 function getProduct() {
     const productId = location.search.split('id=')[1];
-    if (!productId) window.open('../index.html', '_self');
+    if (!productId) window.open('../index.php', '_self');
 
     selectedProduct = products.filter(product => product.id == productId);
 
@@ -12,7 +12,7 @@ function getProduct() {
     }
     else {
         alert('Invalid Product!')
-        window.open('../index.html', '_self');
+        window.open('../index.php', '_self');
     }
 }
 
